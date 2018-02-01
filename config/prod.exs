@@ -15,7 +15,7 @@ config :stream2, Stream2.Endpoint,
   http: [:inet6, port: {:system, "PORT"}],
   url: [scheme: "https", host: "mysterious-meadow-6277.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  cache_static_manifest: "priv/static/cache_manifest.json",
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
 # Configure your database
 config :hello, Hello.Repo,
