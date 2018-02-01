@@ -17,14 +17,11 @@ defmodule Stream2 do
 
      System.cmd("ffmpeg",  List.flatten(commandlist)   )
    end
-   def main(args) do
-     stream()
-   end
+ 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec
-    stream()
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
@@ -39,6 +36,8 @@ defmodule Stream2 do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Stream2.Supervisor]
     Supervisor.start_link(children, opts)
+    stream()
+
   end
 
   # Tell Phoenix to update the endpoint configuration
