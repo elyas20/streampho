@@ -6,8 +6,8 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
-    "phoenix": "file:../../deps/phoenix",                      # This line was changed
-    "phoenix_html": "file:../../deps/phoenix_html"     # This line was changed
+    "phoenix": "file:deps/phoenix",                      
+    "phoenix_html": "file:deps/phoenix_html"   
     
   },
   "devDependencies": {
